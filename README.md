@@ -17,6 +17,7 @@ falls back to a rule-based schedule generator so the rest of the app
 
 ## Run it
 ```
+https://priyanshkumaryadavpbel30-lnl3xj5cuwqgdar6su3pas.streamlit.app/
 pip install -r requirements.txt
 cp .env.example .env   
 streamlit run app.py
