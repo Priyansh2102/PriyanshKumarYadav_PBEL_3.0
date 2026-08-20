@@ -18,6 +18,6 @@ falls back to a rule-based schedule generator so the rest of the app
 ## Run it
 ```
 pip install -r requirements.txt
-cp .env.example .env   # fill in your watsonx API key, project ID, and URL
+cp .env.example .env   
 streamlit run app.py
 ```
