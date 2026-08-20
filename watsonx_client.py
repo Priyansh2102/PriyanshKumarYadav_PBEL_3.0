@@ -4,10 +4,7 @@ from ibm_watsonx_ai import Credentials
 from ibm_watsonx_ai.foundation_models import ModelInference
 from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
 
-load_dotenv()  # reads WATSONX_API_KEY / WATSONX_PROJECT_ID / WATSONX_URL from .env
-
-# Set to a model actually available in this workspace's environment
-# (confirmed via the error message listing supported models).
+load_dotenv() 
 MODEL_ID = "meta-llama/llama-3-3-70b-instruct"
 
 
