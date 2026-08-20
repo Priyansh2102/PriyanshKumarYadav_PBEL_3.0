@@ -1,0 +1,4 @@
+ibm-watsonx-ai
+python-dotenv
+streamlit
+pandas
