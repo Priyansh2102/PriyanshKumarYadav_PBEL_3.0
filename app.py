@@ -4,9 +4,7 @@ import os
 import pandas as pd
 from datetime import datetime, timedelta
 
-# Try to use the real watsonx-powered generator. If credentials aren't set
-# yet or the call fails, fall back to a rule-based schedule so the app
-# always works end to end regardless of account setup status.
+
 try:
     from generate_timetable import generate_timetable as ai_generate_timetable
     WATSONX_AVAILABLE = True
@@ -16,7 +14,7 @@ except Exception:
 DATA_FILE = "app_data.json"
 
 
-# ---------- fallback rule-based generator (used if watsonx isn't ready) ----------
+
 def add_minutes(time_str, minutes):
     t = datetime.strptime(time_str, "%H:%M") + timedelta(minutes=minutes)
     return t.strftime("%H:%M")
@@ -40,7 +38,7 @@ def rule_based_timetable(survey):
     return blocks
 
 
-# ---------- data persistence ----------
+
 def load_data():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE) as f:
@@ -66,7 +64,7 @@ def seed_fake_history(data):
     return data
 
 
-# ---------- streak & goal meter ----------
+
 def calculate_streak(log):
     streak = 0
     day = datetime.now().date()
@@ -98,7 +96,7 @@ def calculate_goal_progress(data):
     return hits, goals
 
 
-# ---------- UI ----------
+
 st.set_page_config(page_title="Ideal Timetable", layout="centered")
 st.title("Your Ideal Timetable")
 
